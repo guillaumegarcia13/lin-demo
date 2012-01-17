@@ -36,9 +36,8 @@ function loginError(req, res, errorMessage) {
   Logout by clearing session, and show login form
 */
 function newSession(req, res, next) {
-  getLeoCookie(req);
   req.session.credentials = undefined;
-  res.render('sessions/new', {leo:getLeoCookie(req)});
+  res.render('sessions/new');
 }
 
 
@@ -46,13 +45,7 @@ function newSession(req, res, next) {
   Perform login based on type.  Either stay on login form with error, or redirect to '/'
 */
 function login(req, res, next) {
-  if (req.body.type === 'direct') {
-    directLogin(req, res, next);
-  } else if (req.body.type === 'leo') {
-    leoLogin(req, res, next);
-  } else {
-    requestToken(req, res, next);
-  }
+  requestToken(req, res, next);
 }
 
 
