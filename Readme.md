@@ -29,15 +29,15 @@ In a hurry?  Download our demo, initialize your keys, and go…
 
 2.  install library dependencies
 
-    > cd lini-demo
-    > npm install -d 
+> cd lini-demo
+> npm install -d 
 
 4.  edit config/environments.json;  initialize linkedin api key and secret
 
 5.  start the application
 
-    > node app.js
-    > http://localhost:3000/
+> node app.js
+> http://localhost:3000/
 
 
 # LINI Do it yourself Option #
@@ -46,22 +46,22 @@ Create your own application that uses lini node_module.
 
 1.  Create "demo" express application
 
-    > express demo
+> express demo
 
 
 2.  add "linkedin-node" node_module to package.json
 
-    > "dependencies": {
-    >   "linkedin-node":">= 1.0.0"
-    > }
+> "dependencies": {
+>   "linkedin-node":">= 1.0.0"
+> }
 
 
 3.  initialize linkedin-node 
 
    For a full example, see lin-demo code where environment variables are in config/environemnts.json and the Lin.init code is in app.js.  Initialize apiKey and apiSecret with LinkedIn application keys.  If using the redirect format of login, verify requestTokenCallback, which will be called after the request token is successfully received (and should point to accessToken functionality).
 
-    > var Lin = require('linkedin-node');
-    > Lin.init({...})
+> var Lin = require('linkedin-node');
+> Lin.init({...})
 
 
 4.  make lin api calls as described below…
@@ -69,8 +69,8 @@ Create your own application that uses lini node_module.
 
 5.  start the application
 
-    > node app.js
-    > http://localhost:3000
+> node app.js
+> http://localhost:3000
 
 
 # How to make LINI API call #
