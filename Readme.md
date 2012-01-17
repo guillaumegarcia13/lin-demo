@@ -25,13 +25,12 @@ In a hurry?  Download our demo, initialize your keys, and go…
 
 1.  download demo application
 
-  > git clone https://githup/braitz/lin-demo.git  lin-demo
+  > git clone https://github.com/braitz/lin-demo
 
-2.  install library dependencies specified in package.json (to be stored in lin-demo/node_modules directory)
+2.  install library dependencies
 
     > cd lini-demo
     > npm install -d 
-    // TODO:  need https://githup/braitz/lin.git  node_modules/lin  (not yet a node module...)
 
 4.  edit config/environments.json;  initialize linkedin api key and secret
 
@@ -50,16 +49,18 @@ Create your own application that uses lini node_module.
     > express demo
 
 
-2.  add "lin" node_module
+2.  add "linkedin-node" node_module to package.json
 
-// TODO:  need https://githup/braitz/lin.git  node_modules/lin  (not yet a node module...)
+    > "dependencies": {
+    >   "linkedin-node":">= 1.0.0"
+    > }
 
 
-3.  initialize lin 
+3.  initialize linkedin-node 
 
    For a full example, see lin-demo code where environment variables are in config/environemnts.json and the Lin.init code is in app.js.  Initialize apiKey and apiSecret with LinkedIn application keys.  If using the redirect format of login, verify requestTokenCallback, which will be called after the request token is successfully received (and should point to accessToken functionality).
 
-    > var Lin = require('lin');
+    > var Lin = require('linkedin-node');
     > Lin.init({...})
 
 
@@ -86,7 +87,7 @@ The Lin-demo application demonstrates an oauth request/access token method to ge
 
 Though there may be documentation, the best way to find available API's is to view the code in the following directory:
 
-> cd <project>/node_modules/lin/lib/api
+> cd <project>/node_modules/linkedin-node/lib/api
 
 To specify an api, you need a folder, a file, and a method name.  So, for example, if you would like to access the v1-people-search api, you would make the following call where 'v1' matches the folder, 'peopleAPI' matches the file name, 'search' is an exported method within that file, and the following args match the argument list required by the method.
 
@@ -95,7 +96,7 @@ To specify an api, you need a folder, a file, and a method name.  So, for exampl
 
 ## Putting it together ##
 
-> var Lin = require('lin');
+> var Lin = require('linkedin-node');
 > var credentials = {token{token:<thisIsTheTokenFromLogin>, secret:<thisIsTheSecretFromLogin>}};
 > var api = Lin.api('v1', 'peopleAPI', 'search', {'keywords':'nodejs'});
 > Lin.makeRequest(credentials, {api:api}, function(err, data) {
