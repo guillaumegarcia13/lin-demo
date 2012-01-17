@@ -1,0 +1,9 @@
+[submodule "node_modules/linkedin_node_internal"]
+	path = node_modules/linkedin_node_internal
+	url = gitorious@gitorious.qa.linkedin.com:mobile-server/linkedin-node-internal.git
+[submodule "node_modules/linkedin-node-internal"]
+	path = node_modules/linkedin-node-internal
+	url = gitorious@gitorious.qa.linkedin.com:mobile-server/linkedin-node-internal.git
+[submodule "node_modules/lini"]
+	path = node_modules/lini
+	url = gitorious@gitorious.qa.linkedin.com:mobile-server/lini.git
